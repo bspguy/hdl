@@ -152,13 +152,12 @@ it is not recommended.
 Third-party directives and roles
 --------------------------------------------------------------------------------
 
-Third-party tools are used to expand Sphinx functionality, for example, to
-generate component diagrams.
+Third-party tools are used to expand Sphinx functionality, if you haven't already,
+do:
 
-.. tip::
+.. code:: bash
 
-   Check :git-hdl:`docs/Containterfile` for a recipe to install these
-   tools, either in the host or in a container.
+   pip install -r requirements.txt
 
 Symbolator directive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -191,10 +190,10 @@ Git role
 The Git role allows to create links to the Git repository with a shorter syntax.
 The role syntax is :code:`:git-repo:\`text <branch:path>\``, for example:
 
-* :code:`:git-hdl:\`master:docs/contributing/guidelines.rst\``
-  renders as :git-hdl:`master:docs/contributing/guidelines.rst`.
-* :code:`:git-hdl:\`Guidelines <docs/contributing/guidelines.rst>\``
-  renders as :git-hdl:`Guidelines <docs/contributing/guidelines.rst>`.
+* :code:`:git-hdl:\`master:docs/user_guide/docs_guidelines.rst\``
+  renders as :git-hdl:`master:docs/user_guide/docs_guidelines.rst`.
+* :code:`:git-hdl:\`Guidelines <docs/user_guide/docs_guidelines.rst>\``
+  renders as :git-hdl:`Guidelines <docs/user_guide/docs_guidelines.rst>`.
 
 The branch field is optional and will be filled with the current branch.
 The text field is optional and will be filled with the file or directory name.
@@ -203,16 +202,16 @@ Finally, you can do :code:`:git-repo:\`/\`` for a link to the root of the
 repository with pretty naming, for example, :code:`:git-hdl:\`/\`` is rendered
 as :git-hdl:`/`.
 
-Part role
+ADI role
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The part role creates links for a part to the Analog Devices Inc. website.
+The adi role creates links for a webpage to the Analog Devices Inc. website.
 
-The role syntax is :code:`:part:\`text <part_id>\``, for example,
-:code:`:part:\`AD7175-2 <ad7175-2>\``.
+The role syntax is :code:`:adi:\`text <webpage>\``, for example,
+:code:`:adi:\`AD7175-2 <ad7175-2>\``.
 Since links are case insensitive, you can also reduce it to
-:code:`:part:\`AD7175-2\``, when *part_id* is the same as *text* and will render
-as :part:`AD7175-2`.
+:code:`:adi:\`AD7175-2\``, when *webpage* is the same as *text* and will render
+as :adi:`AD7175-2`.
 
 Datasheet role
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -246,6 +245,14 @@ EngineerZone role
 The ez role creates links to the Analog Devices Inc. EngineerZone support website.
 The role syntax is :code:`:ez:\`community\``, for example, :code:`:ez:\`fpga\``
 gets rendered as :ez:`fpga`.
+
+MathWorks role
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The mw role creates links for a webpage to the MathWorks website.
+
+The role syntax is :code:`:mw:\`text <webpage>\``, for example,
+:code:`:mw:\`videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html\``.
 
 Vendor role
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -425,3 +432,8 @@ Global options for HDL directives
 
 Use the `hide_collapsible_content` to set the default state of the collapsibles,
 if you set to False, they be expanded by default.
+
+Set `validate_links` to True to validate each link during build.
+These links are not managed, that means, only links from changed files are checked.
+You can run a build with it set to False, then touch the desired files to check
+the links of only these files.
