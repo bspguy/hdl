@@ -2,6 +2,8 @@ sphinx
 lxml
 furo
 wavedrom
+aiohttp
+aiodns
 sphinxcontrib-wavedrom
 sphinxcontrib-mermaid
 sphinxcontrib-svg2pdfconverter

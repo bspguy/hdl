@@ -187,6 +187,16 @@ To print text in red or green, use :code:`:red:\`text\`` and :code:`:green:\`tex
 Git role
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+The link roles are a group of roles defined by ``adi_links.py``.
+
+The ``validate_links`` gloabl option is used to validate each link during build.
+These links are not managed, that means, only links from changed files are checked.
+You can run a build with it set to False, then touch the desired files to check
+the links of only these files.
+
+Git role
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 The Git role allows to create links to the Git repository with a shorter syntax.
 The role syntax is :code:`:git-repo:\`text <branch:path>\``, for example:
 
@@ -203,7 +213,7 @@ repository with pretty naming, for example, :code:`:git-hdl:\`/\`` is rendered
 as :git-hdl:`/`.
 
 ADI role
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The adi role creates links for a webpage to the Analog Devices Inc. website.
 
@@ -246,16 +256,8 @@ The ez role creates links to the Analog Devices Inc. EngineerZone support websit
 The role syntax is :code:`:ez:\`community\``, for example, :code:`:ez:\`fpga\``
 gets rendered as :ez:`fpga`.
 
-MathWorks role
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The mw role creates links for a webpage to the MathWorks website.
-
-The role syntax is :code:`:mw:\`text <webpage>\``, for example,
-:code:`:mw:\`videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html\``.
-
 Vendor role
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The vendor role creates links to the vendor's website.
 The role syntax is :code:`:vendor:\`text <path>\``, for example,
@@ -270,7 +272,8 @@ gets rendered
 :intel:`content/www/us/en/docs/programmable/683780/22-4/general-purpose-i-o-overview.html`
 (not very readable).
 
-Supported vendors are: `xilinx` and `intel`.
+Supported vendors are: ``xilinx`` (AMD Xilinx), ``intel`` (Intel Altera) and
+``mw`` (MathWorks).
 
 HDL parameters directive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -425,15 +428,5 @@ Renders as:
 
 Notice how you can use any Sphinx syntax, even nest other directives.
 
-.. _installing_pandoc:
-
-Global options for HDL directives
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Use the `hide_collapsible_content` to set the default state of the collapsibles,
-if you set to False, they be expanded by default.
-
-Set `validate_links` to True to validate each link during build.
-These links are not managed, that means, only links from changed files are checked.
-You can run a build with it set to False, then touch the desired files to check
-the links of only these files.
+The ``hide_collapsible_content`` global option is used to set the default state of
+the collapsibles, if you set to False, they be expanded by default.
