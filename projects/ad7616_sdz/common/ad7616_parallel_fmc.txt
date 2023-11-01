@@ -3,33 +3,33 @@ FMC_pin FMC_port             Schematic_name   System_top_name  IOSTANDARD  Termi
 # ad7616 - Parallel mode
 # Note: The design uses an SDP to FMC interposer.
 
-R19     FMC_LPC_LA10_P       DB0              adc_db[0]         LVCMOS25     #N/A
-M21     FMC_LPC_LA04_P       DB1              adc_db[1]         LVCMOS25     #N/A
-R20     FMC_LPC_LA09_P       DB2              adc_db[2]         LVCMOS25     #N/A
-N22     FMC_LPC_LA03_P       DB3              adc_db[3]         LVCMOS25     #N/A
-K18     FMC_LPC_LA05_N       DB4              adc_db[4]         LVCMOS25     #N/A
-P18     FMC_LPC_LA02_N       DB5              adc_db[5]         LVCMOS25     #N/A
-L22     FMC_LPC_LA06_N       DB6              adc_db[6]         LVCMOS25     #N/A
-M20     FMC_LPC_LA00_CC_N    DB7              adc_db[7]         LVCMOS25     #N/A
-J18     FMC_LPC_LA05_P       DB8              adc_db[8]         LVCMOS25     #N/A
-P17     FMC_LPC_LA02_P       DB9              adc_db[9]         LVCMOS25     #N/A
-L21     FMC_LPC_LA06_P       DB10             adc_db[10]        LVCMOS25     #N/A
-M19     FMC_LPC_LA00_CC_P    DB11             adc_db[11]        LVCMOS25     #N/A
-N20     FMC_LPC_LA01_CC_N    DB12             adc_db[12]        LVCMOS25     #N/A
-L19     FMC_LPC_CLK0_M2C_N   DB13             adc_db[13]        LVCMOS25     #N/A
-L18     FMC_LPC_CLK0_M2C_P   DB14             adc_db[14]        LVCMOS25     #N/A
-N19     FMC_LPC_LA01_CC_P    DB15             adc_db[15]        LVCMOS25     #N/A
+C14     FMC1_LA10_P       DB0              adc_db[0]         LVCOMOS18     #N/A
+H10     FMC1_LA04_P       DB1              adc_db[1]         LVCOMOS18     #N/A
+D14     FMC1_LA09_P       DB2              adc_db[2]         LVCOMOS18     #N/A
+G9      FMC1_LA03_P       DB3              adc_db[3]         LVCOMOS18     #N/A
+D12     FMC1_LA05_N       DB4              adc_db[4]         LVCOMOS18     #N/A
+H8      FMC1_LA02_N       DB5              adc_db[5]         LVCOMOS18     #N/A
+C11     FMC1_LA06_N       DB6              adc_db[6]         LVCOMOS18     #N/A
+G7      FMC1_LA00_CC_N    DB7              adc_db[7]         LVCOMOS18     #N/A
+D11     FMC1_LA05_P       DB8              adc_db[8]         LVCOMOS18     #N/A
+H7      FMC1_LA02_P       DB9              adc_db[9]         LVCOMOS18     #N/A
+C10     FMC1_LA06_P       DB10             adc_db[10]        LVCOMOS18     #N/A
+G6      FMC1_LA00_CC_P    DB11             adc_db[11]        LVCOMOS18     #N/A
+D9      FMC1_LA01_CC_N    DB12             adc_db[12]        LVCOMOS18     #N/A
+H5      FMC1_CLK0_M2C_N   DB13             adc_db[13]        LVCOMOS18     #N/A
+H4      FMC1_CLK0_M2C_P   DB14             adc_db[14]        LVCOMOS18     #N/A
+D8      FMC1_LA01_CC_P    DB15             adc_db[15]        LVCOMOS18     #N/A
 
-P22     FMC_LPC_LA03_N       SCLK/RDn         adc_rd_n          LVCMOS25     #N/A
-R21     FMC_LPC_LA09_N       WRn              adc_wr_n          LVCMOS25     #N/A
+G10     FMC1_LA03_N       SCLK/RDn         adc_rd_n          LVCOMOS18     #N/A
+D15     FMC1_LA09_N       WRn              adc_wr_n          LVCOMOS18     #N/A
 
-A18     FMC_LPC_LA24_P       CONVST           adc_cnvst         LVCMOS25     #N/A
-E20     FMC_LPC_LA21_N       CHSEL0           adc_chsel[0]      LVCMOS25     #N/A
-E18     FMC_LPC_LA26_N       CHSEL1           adc_chsel[1]      LVCMOS25     #N/A
-D22     FMC_LPC_LA25_P       CHSEL2           adc_chsel[2]      LVCMOS25     #N/A
-E19     FMC_LPC_LA21_P       HW_RNGSEL0       adc_hw_rngsel[0]  LVCMOS25     #N/A
-F18     FMC_LPC_LA26_P       HW_RNGSEL1       adc_hw_rngsel[1]  LVCMOS25     #N/A
-T19     FMC_LPC_LA10_N       BUSY             adc_busy          LVCMOS25     #N/A
-E21     FMC_LPC_LA27_P       SEQEN            adc_seq_en        LVCMOS25     #N/A
-F19     FMC_LPC_LA22_N       RESETn           adc_reset_n       LVCMOS25     #N/A
-M22     FMC_LPC_LA04_N       CSn              adc_cs_n          LVCMOS25     #N/A
+H28     FMC1_LA24_P       CONVST           adc_cnvst         LVCOMOS18     #N/A
+H26     FMC1_LA21_N       CHSEL0           adc_chsel[0]      LVCOMOS18     #N/A
+D27     FMC1_LA26_N       CHSEL1           adc_chsel[1]      LVCOMOS18     #N/A
+G27     FMC1_LA25_P       CHSEL2           adc_chsel[2]      LVCOMOS18     #N/A
+H25     FMC1_LA21_P       HW_RNGSEL0       adc_hw_rngsel[0]  LVCOMOS18     #N/A
+D26     FMC1_LA26_P       HW_RNGSEL1       adc_hw_rngsel[1]  LVCOMOS18     #N/A
+C15     FMC1_LA10_N       BUSY             adc_busy          LVCOMOS18     #N/A
+C26     FMC1_LA27_P       SEQEN            adc_seq_en        LVCOMOS18     #N/A
+G25     FMC1_LA22_N       RESETn           adc_reset_n       LVCOMOS18     #N/A
+H11     FMC1_LA04_N       CSn              adc_cs_n          LVCOMOS18     #N/A
