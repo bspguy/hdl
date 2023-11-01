@@ -53,4 +53,4 @@ switch $S_SI_OR_PI {
   }
 }
 
-adi_project_run ad7616_sdz_zc706
+adi_project_run ad7616_sdz_zcu102
