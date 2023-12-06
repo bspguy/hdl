@@ -1,5 +1,5 @@
 ###############################################################################
-## Copyright (C) 2019-2023 Analog Devices, Inc. All rights reserved.
+## Copyright (C) 2023 Analog Devices, Inc. All rights reserved.
 ### SPDX short identifier: ADIBSD
 ###############################################################################
 
@@ -34,27 +34,27 @@ if {[info exists ::env(SI_OR_PI)]} {
   set S_SI_OR_PI 0
 }
 
-adi_project ad7616_sdz_zc706 0 [list \
+adi_project ad7616_sdz_zcu102 0 [list \
   SI_OR_PI  $S_SI_OR_PI \
 ]
 
-adi_project_files ad7616_sdz_zc706 [list \
+adi_project_files ad7616_sdz_zcu102 [list \
   "$ad_hdl_dir/library/common/ad_iobuf.v" \
-  "$ad_hdl_dir/projects/common/zc706/zc706_system_constr.xdc"]
+  "$ad_hdl_dir/projects/common/zcu102/zcu102_system_constr.xdc"]
 
 switch $S_SI_OR_PI {
   0 {
-    adi_project_files ad7616_sdz_zc706 [list \
+    adi_project_files ad7616_sdz_zcu102 [list \
       "system_top_si.v" \
       "serial_if_constr.xdc"
     ]
   }
   1 {
-    adi_project_files ad7616_sdz_zc706 [list \
+    adi_project_files ad7616_sdz_zcu102 [list \
       "system_top_pi.v" \
       "parallel_if_constr.xdc"
     ]
   }
 }
 
-adi_project_run ad7616_sdz_zc706
+adi_project_run ad7616_sdz_zcu102

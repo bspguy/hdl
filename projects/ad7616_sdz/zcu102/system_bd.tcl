@@ -1,9 +1,9 @@
 ###############################################################################
-## Copyright (C) 2019-2023 Analog Devices, Inc. All rights reserved.
+## Copyright (C) 2023 Analog Devices, Inc. All rights reserved.
 ### SPDX short identifier: ADIBSD
 ###############################################################################
-
-source $ad_hdl_dir/projects/common/zc706/zc706_system_bd.tcl
+#
+source $ad_hdl_dir/projects/common/zcu102/zcu102_system_bd.tcl
 source $ad_hdl_dir/projects/scripts/adi_pd.tcl
 
 set mem_init_sys_path [get_env_param ADI_PROJECT_DIR ""]mem_init_sys.txt;
@@ -19,5 +19,5 @@ source ../common/ad7616_bd.tcl
 
 # memory interconnect
 
-ad_mem_hp1_interconnect sys_cpu_clk sys_ps7/S_AXI_HPC1
-ad_mem_hp1_interconnect sys_cpu_clk axi_ad7616_dma/m_dest_axi
+ad_mem_hpc1_interconnect sys_cpu_clk sys_ps8/S_AXI_HPC1
+ad_mem_hpc1_interconnect sys_cpu_clk axi_ad7616_dma/m_dest_axi
